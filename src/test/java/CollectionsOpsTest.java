@@ -34,8 +34,8 @@ public class CollectionsOpsTest {
     @Test
     public void should_find_specific_number_or_return_not_found() throws Exception {
 
-        String theOne  = CollectionsOps.tryFind(1, numbers);
-        String unknownOne  = CollectionsOps.tryFind(11, numbers);
+        String theOne = CollectionsOps.tryFind(1, numbers);
+        String unknownOne = CollectionsOps.tryFind(11, numbers);
 
         assertThat(theOne, is("Hello, 1"));
         assertThat(unknownOne, is("Not Found"));
