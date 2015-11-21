@@ -1,6 +1,11 @@
 import java.util.HashSet;
 
 public class Comparer {
+
+    public Comparer() {
+
+    }
+
     public String compare(String systemNumber, String userNumber) {
         int numberOfAs = 0, numberOfAsAndBs = 0;
         HashSet<Character> charMap = new HashSet<>();

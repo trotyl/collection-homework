@@ -1,7 +1,11 @@
-import java.util.List;
+import java.util.Random;
 
 public class Generator {
-    private List<String> historicalNumbers;
+    private Random random;
+
+    public Generator(Random random) {
+        this.random = random;
+    }
 
     public String generate() {
         String number;
@@ -14,7 +18,6 @@ public class Generator {
     }
 
     private String randomNumber() {
-        double randomDouble = Math.random();
-        return (int)(randomDouble * 10000) + "";
+        return random.ints(1234, 9876) + "";
     }
 }
