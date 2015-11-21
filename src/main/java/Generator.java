@@ -18,6 +18,6 @@ public class Generator {
     }
 
     private String randomNumber() {
-        return random.ints(1234, 9876) + "";
+        return random.nextInt(9877) + "";
     }
 }
