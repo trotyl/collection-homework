@@ -12,6 +12,8 @@ public class CollectionsOps {
     }
 
     public static String tryFind(Integer toFind, List<Integer> numbers) {
-        return numbers.stream().anyMatch(i -> i.equals(toFind)) ? "Hello, " + toFind : "Not Found";
+
+        return numbers.stream().filter(i -> i.equals(toFind)).map(integer -> "Hello, " + integer).findFirst().orElse("Not Found");
+//        return numbers.stream().anyMatch(i -> i.equals(toFind)) ? "Hello, " + toFind : "Not Found";
     }
 }
