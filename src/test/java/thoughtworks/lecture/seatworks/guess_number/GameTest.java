@@ -3,16 +3,13 @@ package thoughtworks.lecture.seatworks.guess_number;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import thoughtworks.lecture.seatworks.guess_number.Comparer;
-import thoughtworks.lecture.seatworks.guess_number.Game;
-import thoughtworks.lecture.seatworks.guess_number.Generator;
 
 import java.util.Random;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import static org.junit.Assert.*;
 
 public class GameTest {
     private Game game;
@@ -32,6 +29,8 @@ public class GameTest {
 
     @Test
     public void guess_should_get_right_result_for_certain_input() throws Exception {
+        game.start(6);
+
         String result1 = game.guess("1234");
         String result2 = game.guess("1324");
         String result3 = game.guess("4321");
@@ -41,5 +40,11 @@ public class GameTest {
         assertThat(result2, is("2A2B"));
         assertThat(result3, is("0A4B"));
         assertThat(result4, is("0A0B"));
+    }
+
+    @Test
+    public void guess_should_get_null_if_not_started() throws Exception {
+        String result = game.guess("1234");
+        assertThat(result, is((String)null));
     }
 }
