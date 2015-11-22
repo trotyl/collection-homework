@@ -16,6 +16,8 @@ public class Game {
         if (remaining == 0) {
             return null;
         }
+        remaining--;
+
         return comparer.compare(number, guessNumber);
     }
 

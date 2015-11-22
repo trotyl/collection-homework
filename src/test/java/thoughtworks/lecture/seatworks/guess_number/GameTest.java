@@ -7,6 +7,8 @@ import org.junit.Test;
 import java.util.Random;
 
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNull.notNullValue;
+import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -45,6 +47,19 @@ public class GameTest {
     @Test
     public void guess_should_get_null_if_not_started() throws Exception {
         String result = game.guess("1234");
-        assertThat(result, is((String)null));
+        assertThat(result, nullValue());
+    }
+
+    @Test
+    public void guess_should_get_null_if_is_over() throws Exception {
+        game.start(2);
+
+        String result1 = game.guess("5678");
+        String result2 = game.guess("5678");
+        String result3 = game.guess("5678");
+
+        assertThat(result1, notNullValue());
+        assertThat(result2, notNullValue());
+        assertThat(result3, nullValue());
     }
 }
