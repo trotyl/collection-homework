@@ -1,6 +1,9 @@
+package thoughtworks.lecture.seatworks.guess_number;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import thoughtworks.lecture.seatworks.guess_number.Comparer;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

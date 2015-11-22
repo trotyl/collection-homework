@@ -1,3 +1,5 @@
+package thoughtworks.lecture.homeworks.collection;
+
 import org.junit.Before;
 import org.junit.Test;
 

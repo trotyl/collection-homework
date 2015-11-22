@@ -1,3 +1,5 @@
+package thoughtworks.lecture.seatworks.guess_number;
+
 import java.util.HashSet;
 
 public class Comparer {

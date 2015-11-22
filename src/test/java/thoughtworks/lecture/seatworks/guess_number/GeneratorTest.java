@@ -1,3 +1,5 @@
+package thoughtworks.lecture.seatworks.guess_number;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

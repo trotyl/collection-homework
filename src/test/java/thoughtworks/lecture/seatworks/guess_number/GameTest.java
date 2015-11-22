@@ -1,6 +1,11 @@
+package thoughtworks.lecture.seatworks.guess_number;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import thoughtworks.lecture.seatworks.guess_number.Comparer;
+import thoughtworks.lecture.seatworks.guess_number.Game;
+import thoughtworks.lecture.seatworks.guess_number.Generator;
 
 import java.util.Random;
 

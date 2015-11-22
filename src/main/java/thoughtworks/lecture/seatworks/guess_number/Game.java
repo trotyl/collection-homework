@@ -1,3 +1,5 @@
+package thoughtworks.lecture.seatworks.guess_number;
+
 public class Game {
     private String number;
     private Comparer comparer;
