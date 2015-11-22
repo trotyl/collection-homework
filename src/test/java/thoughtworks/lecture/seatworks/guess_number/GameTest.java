@@ -51,6 +51,23 @@ public class GameTest {
     }
 
     @Test
+    public void guess_should_affect_remaining() throws Exception {
+        game.start(2);
+        int result1 = game.getRemaining();
+
+        game.guess("5678");
+        int result2 = game.getRemaining();
+
+        game.guess("5678");
+        int result3 = game.getRemaining();
+
+
+        assertThat(result1, is(2));
+        assertThat(result2, is(1));
+        assertThat(result3, is(0));
+    }
+
+    @Test
     public void guess_should_get_null_if_is_over() throws Exception {
         game.start(2);
 

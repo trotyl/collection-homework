@@ -25,4 +25,8 @@ public class Game {
         number = generator.generate();
         remaining = limit;
     }
+
+    public int getRemaining() {
+        return remaining;
+    }
 }
