@@ -7,12 +7,14 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 public class Cli {
+    public static Random random = new Random();
+
     public Cli() {
 
     }
 
     public static void main(String[] args) throws IOException {
-        Game game = new Game(new Generator(new Random()), new Comparer());
+        Game game = new Game(new Generator(random), new Comparer());
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         game.start(6);
@@ -20,15 +22,9 @@ public class Cli {
         System.out.println();
 
         while (true) {
-            int remaining = game.getRemaining();
-            if (remaining == 0) {
-                System.out.println("Game Over");
-                break;
-            }
 
-            System.out.printf("Please input your number(%d):", remaining);
+            System.out.printf("Please input your number(%d):", game.getRemaining());
             String input = reader.readLine();
-            System.out.println();
 
             if (input.chars().distinct().count() < 4) {
                 System.out.println("Cannot input duplicate numbers!");
@@ -41,6 +37,14 @@ public class Cli {
                 System.out.println("Congratulations!");
                 break;
             }
+
+            if (game.getRemaining() == 0) {
+                System.out.println("Game Over");
+                break;
+            }
+
+            System.out.println(result);
+            System.out.println();
         }
 
     }
