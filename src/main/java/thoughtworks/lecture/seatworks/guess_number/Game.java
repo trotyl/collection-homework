@@ -14,7 +14,7 @@ public class Game {
 
     public String guess(String guessNumber) {
         if (remaining == 0) {
-            return null;
+            return "";
         }
         remaining--;
 
