@@ -9,7 +9,7 @@ public class Comparer {
     }
 
     public String compare(String systemNumber, String userNumber) {
-        int numberOfAs = 0, numberOfAsAndBs;
+        int numberOfAs = 0;
         HashSet<Character> set = new HashSet<>();
 
         for (int i = 0; i < systemNumber.length(); i++) {
@@ -20,7 +20,7 @@ public class Comparer {
             set.add(userNumber.charAt(i));
         }
 
-        numberOfAsAndBs = 8 - set.size();
+        int numberOfAsAndBs = 8 - set.size();
 
         return numberOfAs + "A" + (numberOfAsAndBs - numberOfAs) + "B";
     }
