@@ -105,21 +105,24 @@ public class CliTest {
         assertThat(outputLines[2], is("Please input your number(6):Congratulations!"));
     }
 
-//    @Test
-//    public void should_have_proper_order_of_prompt_if_right_after_trials() throws Exception {
-//        String input = String.join(System.getProperty("line.separator"),
-//                "1236", "1235", "1234");
-//        ByteArrayInputStream testIn = new ByteArrayInputStream(input.getBytes());
-//        System.setIn(testIn);
-//
-//        Cli.main(null);
-//
-//        String[] outputLines = testOut.toString().split(System.getProperty("line.separator"));
-//
-//        assertThat(outputLines.length, is(4));
-//        assertThat(outputLines[0], is("Welcome!"));
-//        assertThat(outputLines[1], is(""));
-//        assertThat(outputLines[2], is("Please input your number(6):"));
-//        assertThat(outputLines[3], is("Congratulations!"));
-//    }
+    @Test
+    public void should_have_proper_order_of_prompt_if_right_after_trials() throws Exception {
+        String input = String.join(System.getProperty("line.separator"),
+                "1236", "1235", "1234");
+        ByteArrayInputStream testIn = new ByteArrayInputStream(input.getBytes());
+        System.setIn(testIn);
+
+        Cli.main(null);
+
+        String[] outputLines = testOut.toString().split(System.getProperty("line.separator"));
+
+        assertThat(outputLines.length, is(7));
+        assertThat(outputLines[0], is("Welcome!"));
+        assertThat(outputLines[1], is(""));
+        assertThat(outputLines[2], is("Please input your number(6):3A0B"));
+        assertThat(outputLines[3], is(""));
+        assertThat(outputLines[4], is("Please input your number(5):3A0B"));
+        assertThat(outputLines[5], is(""));
+        assertThat(outputLines[6], is("Please input your number(4):Congratulations!"));
+    }
 }
