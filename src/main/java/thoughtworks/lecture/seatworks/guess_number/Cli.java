@@ -9,10 +9,6 @@ import java.util.Random;
 public class Cli {
     public static Random random = new Random();
 
-    public Cli() {
-
-    }
-
     public static void main(String[] args) throws IOException {
         Game game = new Game(new Generator(random), new Comparer());
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -22,7 +18,6 @@ public class Cli {
         System.out.println();
 
         while (true) {
-
             System.out.printf("Please input your number(%d):", game.getRemaining());
             String input = reader.readLine();
 
