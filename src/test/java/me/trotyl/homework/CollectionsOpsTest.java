@@ -1,4 +1,4 @@
-package thoughtworks.lecture.homeworks.collection;
+package me.trotyl.homework;
 
 import org.junit.Before;
 import org.junit.Test;
